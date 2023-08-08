@@ -1,14 +1,20 @@
 import kivy
 kivy.require('2.1.0')
+from kivy.uix.widget import Widget
+from kivy.properties import (StringProperty)
 
 from kivy.app import App
 from kivy.uix.label import Label
 
 
-class TestApp(App):
+class LoginScreen(Widget):
+    f_username = StringProperty(None)
+    f_password = StringProperty(None)
 
+class TestApp(App):
     def build(self):
-        return Label(text='Hello, world!!')
+        log_in = LoginScreen()
+        return log_in
 
 
 if __name__ == '__main__':
